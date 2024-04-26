@@ -1,6 +1,6 @@
 ![recon-struct logo](https://avatars.githubusercontent.com/u/168223311?s=300)
 
-# 𝔯𝔢𝔠𝔬𝔫-𝔰𝔱𝔯𝔲𝔠𝔱 / utility-types
+# 𝔯𝔢𝔠𝔬𝔫-𝔰𝔱𝔯𝔲𝔠𝔱 / utils
 
 A repository of utility functions for JavaScript.
 
@@ -14,4 +14,4 @@ supercharge AI based tools like [Copilot](https://docs.github.com/en/copilot).
 
 ## 🌐 Links
 
-- [Documentation](https://recon-struct.github.io/utility-types)
+- [Documentation](https://recon-struct.github.io/utils)
