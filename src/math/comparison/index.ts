@@ -1,0 +1,5 @@
+export { default as isEqual } from './is-equal'
+export { default as isGreaterThan } from './is-greater-than'
+export { default as isGreaterThanOrEqual } from './is-greater-than-or-equal'
+export { default as isLessThan } from './is-less-than'
+export { default as isLessThanOrEqual } from './is-less-than-or-equal'
