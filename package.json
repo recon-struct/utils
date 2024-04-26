@@ -1,18 +1,21 @@
 {
   "name": "@recon-struct/utils",
   "version": "1.0.1",
+  "description": "A collection of utility functions",
   "module": "src/index.ts",
   "main": "dist/index.js",
   "type": "module",
   "devDependencies": {
     "@recon-struct/utility-types": "1.0.2",
     "@types/bun": "latest",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "typedoc": "^0.25.13"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
+    "generate-docs": "typedoc --out docs src",
     "test": "bun test",
     "dev": "bun build --watch",
     "build": "rimraf ./dist && tsc && bun build.ts"
