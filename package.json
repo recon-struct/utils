@@ -1,6 +1,6 @@
 {
   "name": "@recon-struct/utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of utility functions",
   "module": "src/index.ts",
   "main": "dist/index.js",
