@@ -11,6 +11,7 @@
     "rimraf": "^5.0.5",
     "typedoc": "^0.25.13"
   },
+  "license": "MIT",
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
