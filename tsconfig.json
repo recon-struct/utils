@@ -24,14 +24,15 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
-    // NOTE added this section to enable emitting declaration files
-    // Declaration files
-    "declaration": true,
+    // Local configuration changes
     "outDir": "dist",
-    "rootDir": "src",
+    "baseUrl": "src",
     "paths": {
-      "~/*": ["./src/*"]
-    }
+      "~/*": ["*"],
+    },
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": ["**/*.spec.ts"]
