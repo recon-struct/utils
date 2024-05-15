@@ -1,5 +1,6 @@
-import type { IsEqual } from '@recon-struct/utility-types/dist/any/antecedent/is-equal'
+
 import type { AnyPrimitive } from '@recon-struct/utility-types/dist/any/any-primitive'
+import type { IsEqual } from '@recon-struct/utility-types/dist/extension/antecedent/is-equal'
 
 /**
  * Validates if two values are equal.

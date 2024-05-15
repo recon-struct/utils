@@ -1,7 +1,8 @@
-import type { AnyKey } from '@recon-struct/utility-types/dist/any/any-key'
-import type { GeneratorReturnType } from '@recon-struct/utility-types/dist/generator/generator-return-type'
-import type { GeneratorYieldType } from '@recon-struct/utility-types/dist/generator/generator-yield-type'
-import type { ObjectIntersectionIdenity } from '@recon-struct/utility-types/dist/identity/object-intersection-identity'
+import type { ObjectAssignIdentity } from "@recon-struct/utility-types"
+import type { AnyKey } from "@recon-struct/utility-types/dist/any/any-key"
+import type { GeneratorReturnType } from "@recon-struct/utility-types/dist/generator/generator-return-type"
+import type { GeneratorYieldType } from "@recon-struct/utility-types/dist/generator/generator-yield-type"
+
 
 /**
  * An object reference yielded (or returned) from the object generator
@@ -28,7 +29,7 @@ export interface CreateObjectGenerator {
     a: A,
     b: B,
   ): Generator<Reference<A, ReferenceValue<B>>, Reference<A, ReferenceValue<B>>>
-  (): Generator<ObjectIntersectionIdenity, ObjectIntersectionIdenity>
+  (): Generator<ObjectAssignIdentity, ObjectAssignIdentity>
 }
 
 /**
