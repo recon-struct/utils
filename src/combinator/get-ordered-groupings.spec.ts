@@ -7,6 +7,16 @@ describe('orderedGroupings', () => {
     expect(getOrderedGroupings(1)).toEqual([[1]])
     expect(getOrderedGroupings(2)).toEqual([[2], [1, 1]])
     expect(getOrderedGroupings(3)).toEqual([[3], [1, 2], [1, 1, 1], [2, 1]])
+    expect(getOrderedGroupings(4)).toEqual([
+      [4],
+      [1, 3],
+      [1, 1, 2],
+      [1, 1, 1, 1],
+      [1, 2, 1],
+      [2, 2],
+      [2, 1, 1],
+      [3, 1],
+    ])
   })
 
   it('should throw an error if n is less than 0', () => {

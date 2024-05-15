@@ -1,6 +1,6 @@
 import type { Arity1 } from '@recon-struct/utility-types/dist/function/arity/arity-1'
 
-interface Pipe {
+export interface Pipe {
   <A>(a: A): A
   <A, B>(a: A, ab: Arity1<A, B>): B
   <A, B, C>(a: A, ab: Arity1<A, B>, bc: Arity1<B, C>): C

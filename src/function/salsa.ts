@@ -20,7 +20,7 @@ import type { PartApp8 as P8 } from '@recon-struct/utility-types/dist/function/p
 /**
  * Represents a Salsa function.
  */
-interface Salsa {
+export interface Salsa {
   <A>(_: A0<A>): P0<A>
   <A, B>(_: A1<A, B>): P1<A, B>
   <A, B, C>(_: A2<A, B, C>): P2<A, B, C>

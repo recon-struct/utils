@@ -29,6 +29,9 @@
     "declaration": true,
     "outDir": "dist",
     "rootDir": "src",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["**/*.spec.ts"]

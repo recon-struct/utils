@@ -11,7 +11,7 @@ import type { Arity8 as A8 } from '@recon-struct/utility-types/dist/function/ari
 /**
  * Represents a curried function.
  */
-interface Curry {
+export interface Curry {
   <A>(_: A0<A>): A0<A>
   <A, B>(_: A1<A, B>): A1<A, B>
   <A, B, C>(_: A2<A, B, C>): A1<A, A1<B, C>>
