@@ -23,7 +23,7 @@ export interface Interpolate {
    */
   <
     A extends string,
-    B extends { start: '{{', end: '}}' },
+    B extends { start: string, end: string },
     C extends AnyObject<Capture<A, B>, string>,
   >(
     a: A,
