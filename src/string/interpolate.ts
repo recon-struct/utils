@@ -1,7 +1,6 @@
 import type { AnyObject } from '@recon-struct/utility-types/dist/any/any-object'
 import type { Capture } from '@recon-struct/utility-types/dist/string/capture'
 import type { Interpolation } from '@recon-struct/utility-types/dist/string/interpolation'
-import type { CaptureGroup } from '@recon-struct/utility-types/dist/string/utils'
 
 /**
  * Represents a function that performs string interpolation.
@@ -24,7 +23,7 @@ export interface Interpolate {
    */
   <
     A extends string,
-    B extends CaptureGroup,
+    B extends { start: '{{', end: '}}' },
     C extends AnyObject<Capture<A, B>, string>,
   >(
     a: A,
