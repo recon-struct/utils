@@ -25,7 +25,7 @@ export interface Interpolate {
   <
     A extends string,
     B extends HelperCaptureGroup,
-    C extends AnyObject<Capture<A, B>, string>,
+    C extends AnyObject<Capture<A, B>, string | number>,
   >(
     a: A,
     b: B,
