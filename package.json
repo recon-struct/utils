@@ -20,7 +20,7 @@
     "test": "bun test",
     "dev": "bun build --watch",
     "build": "rimraf ./dist && tsc && bun build.ts",
-    "arity-test": "bun --watch src/examples/arity/index.ts"
+    "test-arity": "bun --watch src/examples/arity/gen-partials.ts"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
