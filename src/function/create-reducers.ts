@@ -1,5 +1,5 @@
 import type { AnyPrimitive } from '@recon-struct/utility-types/dist/any/any-primitive'
-import type { Tail } from '@recon-struct/utility-types/dist/tuple/tail'
+import type { Rest } from '@recon-struct/utility-types/dist/tuple/rest'
 
 /**
  * Represents a reducer function.
@@ -38,8 +38,8 @@ export interface Action<A extends AnyPrimitive, B extends any[]> {
  */
 export type ReducerActions<A extends any, B extends ReducerFunctions<A>> = {
   [C in keyof B]: (
-    ..._: Tail<Parameters<B[C]>>
-  ) => Action<C, Tail<Parameters<B[C]>>>
+    ..._: Rest<Parameters<B[C]>>
+  ) => Action<C, Rest<Parameters<B[C]>>>
 }
 
 /**
@@ -58,7 +58,7 @@ function createReducers<A extends any, B extends ReducerFunctions<A>>(
 ) {
   const reducer = <C extends keyof B>(
     state: A,
-    { type, params }: Action<C, Tail<Parameters<B[C]>>>,
+    { type, params }: Action<C, Rest<Parameters<B[C]>>>,
   ): A => {
     const reducerMethod = reducerFunctions[type]
 

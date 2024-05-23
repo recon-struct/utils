@@ -17,6 +17,6 @@ describe('getProp', () => {
   it('should return false if the object is nullish', () => {
     const obj = null
     const result = getProp(obj, 'a')
-    expect(result).toBe(false)
+    expect(result).toBe(undefined)
   })
 })

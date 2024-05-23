@@ -1,8 +1,6 @@
-import type { AnyArray } from '@recon-struct/utility-types/dist/any/any-array'
 import type { AnyFunction } from '@recon-struct/utility-types/dist/any/any-function'
 import type { AnyKey } from '@recon-struct/utility-types/dist/any/any-key'
 import type { AnyObject } from '@recon-struct/utility-types/dist/any/any-object'
-import type { KeyOf } from '@recon-struct/utility-types/dist/object/key-of'
 
 /**
  * The name of the property used to discriminate the type of a token.
@@ -37,9 +35,9 @@ export type Token<
  */
 export type Factories<
   A extends AnyKey,
-  B extends AnyObject<AnyKey, AnyFunction<AnyArray, AnyObject>>,
+  B extends AnyObject<AnyKey, AnyFunction<any[], AnyObject>>,
 > = {
-  [C in KeyOf<B>]: (..._: Parameters<B[C]>) => Token<A, C, ReturnType<B[C]>>
+  [C in keyof B]: (..._: Parameters<B[C]>) => Token<A, C, ReturnType<B[C]>>
 }
 
 /**

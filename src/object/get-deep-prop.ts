@@ -1,8 +1,15 @@
 import type {
-  DeepObject,
-  GetKeys,
-} from '@recon-struct/utility-types/dist/object/get-keys'
-import type { GetValue } from '@recon-struct/utility-types/dist/object/get-value'
+  AnyKey,
+  AnyPrimitive,
+  GetPathValue,
+  GetPaths,
+  Join,
+  Split,
+} from '@recon-struct/utility-types'
+
+export interface DeepObject {
+  [key: AnyKey]: DeepObject | AnyPrimitive
+}
 
 /**
  * Get a deep property from an object
@@ -12,23 +19,23 @@ import type { GetValue } from '@recon-struct/utility-types/dist/object/get-value
  * @typeParam C - The type of the connector
  * @param ref - The object
  * @param key - The key
- * @param connector - The connector
+ * @param separator - The connector
  * @example
  * ```
- * getDeepProp({ a: { b: 'c' } }, 'a.b') // 'c'
+ * const ex1 = getDeepProp({ a: { b: 'c' } } as const, 'a.b') // 'c'
  * ```
  * @category Object
  */
 const getDeepProp = <
   A extends DeepObject,
-  B extends GetKeys<A, C>,
+  B extends Join<GetPaths<A>, C>,
   C extends string = '.',
 >(
   ref: A,
   key: B,
-  connector: C = '.' as C,
-): GetValue<A, B, C> => {
-  const subKeys = (key as string).split(connector)
+  separator: C = '.' as C,
+): GetPathValue<A, Split<B, C>> => {
+  const subKeys = (key as string).split(separator)
 
   return subKeys.reduce((memo: any, subKey) => memo[subKey], ref)
 }

@@ -1,4 +1,4 @@
-import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/binary-operator'
+import type { Arity2 } from '@recon-struct/utility-types/dist/function/arity/arity-2'
 
 /**
  * Multiplies two numbers.
@@ -8,6 +8,6 @@ import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/b
  * @returns The product of the two numbers.
  * @category Math
  */
-const mul: BinaryOperator<number, number> = (a, b) => a * b
+const mul: Arity2<number, number, number> = (a, b) => a * b
 
 export default mul

@@ -1,4 +1,4 @@
-import type { BinaryOperator } from '@recon-struct/utility-types'
+import type { Arity2 } from '@recon-struct/utility-types/dist/function/arity/arity-2'
 
 /**
  * Checks if the first number is greater than or equal to the second number.
@@ -9,6 +9,6 @@ import type { BinaryOperator } from '@recon-struct/utility-types'
  *          number, false otherwise.
  * @category Math
  */
-const isGreaterThanOrEqual: BinaryOperator<number, boolean> = (a, b) => a >= b
+const isGreaterThanOrEqual: Arity2<number, number, boolean> = (a, b) => a >= b
 
 export default isGreaterThanOrEqual

@@ -1,4 +1,4 @@
-import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/binary-operator'
+import type { Arity2 } from '@recon-struct/utility-types/dist/function/arity/arity-2'
 
 /**
  * Checks if the first number is less than or equal to the second number.
@@ -9,6 +9,6 @@ import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/b
  *          false otherwise.
  * @category Math
  */
-const isLessThanOrEqual: BinaryOperator<number, boolean> = (a, b) => a <= b
+const isLessThanOrEqual: Arity2<number, number, boolean> = (a, b) => a <= b
 
 export default isLessThanOrEqual

@@ -4,8 +4,10 @@
   "description": "A collection of utility functions",
   "type": "module",
   "devDependencies": {
-    "@recon-struct/utility-types": "^1.3.6",
-    "@types/bun": "latest",
+    "@recon-struct/utility-types": "^1.4.0",
+    "@types/bun": "^1.1.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
     "rimraf": "^5.0.7",
     "typedoc": "^0.25.13"
   },
@@ -17,7 +19,8 @@
     "generate-docs": "typedoc --out docs src",
     "test": "bun test",
     "dev": "bun build --watch",
-    "build": "rimraf ./dist && tsc && bun build.ts"
+    "build": "rimraf ./dist && tsc && bun build.ts",
+    "arity-test": "bun --watch src/examples/arity/index.ts"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",

@@ -1,4 +1,4 @@
-import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/binary-operator'
+import type { Arity2 } from '@recon-struct/utility-types/dist/function/arity/arity-2'
 
 /**
  * Calculates the power of a number.
@@ -8,6 +8,6 @@ import type { BinaryOperator } from '@recon-struct/utility-types/dist/function/b
  * @returns The result of raising `a` to the power of `b`.
  * @category Math
  */
-const pow: BinaryOperator<number, number> = (a, b) => a ** b
+const pow: Arity2<number, number, number> = (a, b) => a ** b
 
 export default pow

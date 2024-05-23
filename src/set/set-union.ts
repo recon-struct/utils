@@ -1,6 +1,3 @@
-import type { AnySet } from '@recon-struct/utility-types/dist/any/any-set'
-import type { ValueOf } from '@recon-struct/utility-types/dist/object/value-of'
-
 /**
  * Returns the union of two sets.
  *
@@ -11,9 +8,7 @@ import type { ValueOf } from '@recon-struct/utility-types/dist/object/value-of'
  * @returns The union of the two sets.
  * @category Set
  */
-const setUnion = <A extends AnySet, B extends AnySet>(
-  a: A,
-  b: B,
-): AnySet<ValueOf<A> | ValueOf<B>> => new Set([...a, ...b])
+const setUnion = <A, B>(a: Set<A>, b: Set<B>): Set<A | B> =>
+  new Set([...a, ...b])
 
 export default setUnion

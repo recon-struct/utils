@@ -11,11 +11,16 @@ import isNullish from '../type-guard/is-nullish'
  * @param key - The key
  * @example
  * ```
- * getProp({ a: 'b' }, 'a') // 'b'
+ * const ex1 = getProp({ a: 'b' }, 'a') // 'b'
+ * const ex2 = getProp(null, 'a') // undefined
  * ```
  * @category Object
  */
 const getProp = <A, B extends AnyKey>(ref: A, key: B) =>
-  isNullish(ref) ? false : (ref as AnyObject)[key]
+  (isNullish(ref)
+    ? undefined
+    : (ref as A extends AnyObject ? A : never)[key]) as A extends AnyObject
+    ? A[B]
+    : undefined
 
 export default getProp
