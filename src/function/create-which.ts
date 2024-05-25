@@ -68,15 +68,11 @@ export interface Which {
  * ```
  * @category Function
  */
-const createWhich: Which =
-  (ref: any, defaultKey?: AnyKey) => (key?: AnyKey) => {
-    if (key !== undefined) {
-      return ref[key]
-    } else if (defaultKey !== undefined) {
-      return ref[defaultKey]
-    } else {
-      return
-    }
-  }
+const createWhich: Which = (ref: any, defaultKey?: AnyKey) => (key?: AnyKey) =>
+  key !== undefined
+    ? ref[key]
+    : defaultKey !== undefined
+      ? ref[defaultKey]
+      : undefined
 
 export default createWhich

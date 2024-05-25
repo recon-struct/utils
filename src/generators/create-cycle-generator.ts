@@ -12,8 +12,6 @@ function* createNumberGenerator<A>(sequence: A[]) {
     yield sequence[index]
     index = (index + 1) % sequenceLength
   }
-
-  return sequence[index]
 }
 
 export default createNumberGenerator

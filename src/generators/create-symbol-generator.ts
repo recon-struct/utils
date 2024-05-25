@@ -11,8 +11,6 @@ function* createSymbolGenerator() {
     yield sym
     sym = Symbol()
   }
-
-  return sym
 }
 
 export default createSymbolGenerator

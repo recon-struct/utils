@@ -3,8 +3,10 @@ import isPrimitive from './is-primitive'
 describe('isPrimitive', () => {
   it('should return true for primitive values', () => {
     expect(isPrimitive(42)).toBe(true)
+    expect(isPrimitive(42n)).toBe(true)
     expect(isPrimitive('hello')).toBe(true)
     expect(isPrimitive(true)).toBe(true)
+    expect(isPrimitive(false)).toBe(true)
     expect(isPrimitive(null)).toBe(true)
     expect(isPrimitive(undefined)).toBe(true)
   })

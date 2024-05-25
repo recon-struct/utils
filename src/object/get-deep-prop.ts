@@ -1,15 +1,9 @@
 import type {
-  AnyKey,
-  AnyPrimitive,
   GetPathValue,
   GetPaths,
   Join,
   Split,
 } from '@recon-struct/utility-types'
-
-export interface DeepObject {
-  [key: AnyKey]: DeepObject | AnyPrimitive
-}
 
 /**
  * Get a deep property from an object
@@ -27,7 +21,7 @@ export interface DeepObject {
  * @category Object
  */
 const getDeepProp = <
-  A extends DeepObject,
+  A extends object,
   B extends Join<GetPaths<A>, C>,
   C extends string = '.',
 >(

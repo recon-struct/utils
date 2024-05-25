@@ -35,6 +35,17 @@ describe('createWhich', () => {
 
     expect(which(lookupKey)).toBe(expected)
   })
+
+  it('should return undefined for missing lookups without a default', () => {
+    const lookupKey = 'z'
+    const expected = undefined
+    const which = createWhich({
+      a: 1,
+      b: 'b',
+    })
+
+    expect(which(lookupKey)).toBe(expected)
+  })
 })
 
 export {}

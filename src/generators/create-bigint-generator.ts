@@ -11,8 +11,6 @@ function* createBigintGenerator() {
     yield value
     value++
   }
-
-  return value
 }
 
 export default createBigintGenerator

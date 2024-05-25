@@ -11,8 +11,6 @@ function* createNumberGenerator() {
     yield value
     value++
   }
-
-  return value
 }
 
 export default createNumberGenerator
