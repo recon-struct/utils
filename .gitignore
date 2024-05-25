@@ -173,3 +173,6 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# We do not use pnpm anymore
+pnpm-lock.yaml
