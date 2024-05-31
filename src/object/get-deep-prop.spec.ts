@@ -13,4 +13,10 @@ describe('getDeepProp', () => {
     const result = getDeepProp(obj, 'a/b', '/')
     expect(result).toBe('c')
   })
+
+  it('should support any string as aproperty not containing the separator', () => {
+    const obj = { a: { 'Content-Length': 'c' } }
+    const result = getDeepProp(obj, 'a.Content-Length')
+    expect(result).toBe('c')
+  })
 })

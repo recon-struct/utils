@@ -21,4 +21,10 @@ describe('setDeepProp', () => {
       setDeepProp(obj, 'a.b.c' as Join<GetPaths<typeof obj>, '.'>, 'd'),
     ).toThrow()
   })
+
+  it('should support any string as a property not containing the separator', () => {
+    const obj = { a: { 'Content-Length': 'c' } }
+    setDeepProp(obj, 'a.Content-Length', 'd')
+    expect(obj.a['Content-Length']).toBe('d')
+  })
 })

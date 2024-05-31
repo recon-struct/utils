@@ -1,4 +1,4 @@
-import type { HelperCaptureGroup } from '@recon-struct/utility-types'
+import type { CaptureGroup } from '@recon-struct/utility-types'
 import type { AnyObject } from '@recon-struct/utility-types/dist/any/any-object'
 import type { Capture } from '@recon-struct/utility-types/dist/string/capture'
 import type { Interpolation } from '@recon-struct/utility-types/dist/string/interpolation'
@@ -24,7 +24,7 @@ export interface Interpolate {
    */
   <
     A extends string,
-    B extends HelperCaptureGroup,
+    B extends CaptureGroup,
     C extends AnyObject<Capture<A, B>, string | number>,
   >(
     a: A,
