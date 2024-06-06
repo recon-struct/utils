@@ -13,4 +13,17 @@ describe('getNorm', () => {
     expect(() => getNorm(0, 10, -5)).toThrow('Value out of range')
     expect(() => getNorm(0, 10, 15)).toThrow('Value out of range')
   })
+
+  it('should handle negative ranges', () => {
+    expect(getNorm(-10, 0, -5)).toBe(0.5)
+    expect(getNorm(-10, 0, 0)).toBe(1)
+    expect(getNorm(-10, 0, -10)).toBe(0)
+  })
+
+  it('should work as expected when the first parameter is greater than the second', () => {
+    expect(getNorm(10, 0, 5)).toBe(0.5)
+    expect(getNorm(10, 0, 0)).toBe(1)
+    expect(getNorm(10, 0, 10)).toBe(0)
+    expect(getNorm(10, -10, -5)).toBe(0.75)
+  })
 })

@@ -1,7 +1,15 @@
-const getLerp = (min: number, max: number, norm: number) => {
-  const delta = max - min
+/**
+ * Calculates the linear interpolation between two numbers.
+ *
+ * @param start - The starting value.
+ * @param end - The ending value.
+ * @param norm - The interpolation factor, usually between 0 and 1.
+ * @returns The interpolated value between `start` and `end`.
+ */
+const getLerp = (start: number, end: number, norm: number) => {
+  const delta = end - start
 
-  return min + delta * norm
+  return start + delta * norm
 }
 
 export default getLerp
