@@ -1,8 +1,16 @@
-const getNorm = (start: number, end: number, value: number): number => {
-  const min = Math.min(start, end)
-  const max = Math.max(start, end)
+import isInRange from './comparison/is-in-range'
 
-  if (value < min || value > max) {
+/**
+ * Calculates the normalized value between a start and end range.
+ *
+ * @param start - The start value of the range.
+ * @param end - The end value of the range.
+ * @param value - The value to be normalized.
+ * @returns The normalized value between 0 and 1.
+ * @throws Error if the value is out of the specified range.
+ */
+const getNorm = (start: number, end: number, value: number): number => {
+  if (isInRange(start, end, value) === false) {
     throw new Error('Value out of range')
   }
 

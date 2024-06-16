@@ -13,3 +13,5 @@ describe('isGreaterThan', () => {
     expect(isGreaterThanOrEqual(-1, 0)).toBe(false)
   })
 })
+
+const x = isGreaterThanOrEqual(1, 2)
