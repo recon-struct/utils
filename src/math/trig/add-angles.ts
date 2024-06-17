@@ -3,6 +3,7 @@
  * @param angle1 - The first angle in radians.
  * @param angle2 - The second angle in radians.
  * @returns The combined angle normalized to the range 0 to 2π.
+ * @category Math
  */
 function addAngles(angle1: number, angle2: number): number {
   const combinedAngle = angle1 + angle2

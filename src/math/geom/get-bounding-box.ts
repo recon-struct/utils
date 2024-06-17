@@ -1,3 +1,11 @@
+/**
+ * Calculates the bounding box of a set of points.
+ *
+ * @param vals - The values representing the points. The number of values must be even.
+ * @returns An array representing the bounding box in the format [minX, minY, maxX, maxY].
+ * @throws {Error} If the number of values is not even.
+ * @category Math
+ */
 const getBoundingBox = (
   ...vals: number[]
 ): [number, number, number, number] => {

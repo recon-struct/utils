@@ -12,6 +12,7 @@ interface GetYIntercept {
  *
  * @param params - The parameters required to calculate the y-intercept.
  * @returns The y-intercept of the line.
+ * @category Math
  */
 const getYIntercept: GetYIntercept = (...params: number[]) => {
   let x1: number

@@ -6,6 +6,7 @@
  * @param x2 - The x-coordinate of the second point.
  * @param y2 - The y-coordinate of the second point.
  * @returns The hypotenuse between the two points.
+ * @category Math
  */
 const getHypot = (x1: number, y1: number, x2: number, y2: number): number => {
   const dx = x2 - x1
