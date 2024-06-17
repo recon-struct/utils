@@ -1,15 +1,17 @@
+import type { Point } from '@recon-struct/utility-types/dist/geometry/point'
+
 /**
- * Calculates the midpoint between two points in a 2D coordinate system.
+ * Calculates the midpoint between two points.
  *
  * @param x1 - The x-coordinate of the first point.
  * @param y1 - The y-coordinate of the first point.
  * @param x2 - The x-coordinate of the second point.
  * @param y2 - The y-coordinate of the second point.
- * @returns An object representing the midpoint with `x` and `y` properties.
+ * @returns The midpoint as an array containing the x and y coordinates.
  */
-const getMidPoint = (x1: number, y1: number, x2: number, y2: number) => ({
-  x: (x1 + x2) / 2,
-  y: (y1 + y2) / 2,
-})
+const getMidPoint = (x1: number, y1: number, x2: number, y2: number): Point => [
+  (x1 + x2) / 2,
+  (y1 + y2) / 2,
+]
 
 export default getMidPoint

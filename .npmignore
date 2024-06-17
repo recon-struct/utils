@@ -173,3 +173,12 @@ out
 
 # Finder (MacOS) folder config
 .DS_Store
+
+src/
+docs/
+.vscode/
+.github/
+
+.prettierrc.cjs
+tsconfig*.json
+typedoc.json

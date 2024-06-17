@@ -28,7 +28,7 @@
     "outDir": "dist",
     "baseUrl": "src",
     "paths": {
-      "~/*": ["*"],
+      "~/*": ["./*"]
     },
     "noEmit": false,
     "declaration": true,
