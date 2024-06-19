@@ -7,7 +7,7 @@
  */
 export interface Add {
   <A extends number, B extends number>(a: A, b: B): number
-  <A extends string, B extends string>(a: A, b: B): string
+  <A extends string, B extends string>(a: A, b: B): `${A}${B}`
   /** The remaining cases describe JavaScript's behavior */
   <A extends string, B extends number>(a: A, b: B): string
   <A extends number, B extends string>(a: A, b: B): string
