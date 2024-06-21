@@ -15,6 +15,7 @@ import type { Struct, StructValue } from '~/struct/types'
  * @param {D} value - The value of the struct.
  * @param {E} isLittleEndian - The flag indicating whether the DataView is little endian.
  * @throws If the offset is outside the bounds of the buffer.
+ * @category Struct
  */
 const viewSet = <
   A extends DataView,

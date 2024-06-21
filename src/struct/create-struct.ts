@@ -5,6 +5,7 @@ import type { Struct, StructTuple } from './types'
  *
  * @param structs - An array of structs.
  * @returns A tuple-like structure containing the input structs.
+ * @category Struct
  */
 const createStruct = <A extends Struct[]>(
   structs: [...A],

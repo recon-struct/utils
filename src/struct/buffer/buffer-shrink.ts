@@ -5,6 +5,7 @@ import type { Struct } from '~/struct/types'
  *
  * @param buffer - The buffer to shrink.
  * @param struct - The data to remove from the buffer.
+ * @category Struct
  */
 const bufferShrink = (buffer: ArrayBuffer, struct: Struct) => {
   buffer.resize(buffer.byteLength - struct.byteLength)

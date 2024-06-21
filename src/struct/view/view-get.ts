@@ -10,6 +10,7 @@ import type { Struct } from '~/struct/types'
  * @param isLittleEndian - Optional. Specifies whether the data is in little-endian byte order. Defaults to the system's endianness.
  * @returns The structured data retrieved from the DataView object.
  * @throws If the offset is outside the bounds of the DataView object's buffer.
+ * @category Struct
  */
 const viewGet = (
   view: DataView,
