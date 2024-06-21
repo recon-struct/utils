@@ -1,5 +1,5 @@
-import type { CaptureGroup } from '@recon-struct/utility-types'
 import type { AnyObject } from '@recon-struct/utility-types/dist/any/any-object'
+import type { CaptureGroup } from '@recon-struct/utility-types/dist/helper/capture-group'
 import type { Capture } from '@recon-struct/utility-types/dist/string/capture'
 import type { Interpolation } from '@recon-struct/utility-types/dist/string/interpolation'
 

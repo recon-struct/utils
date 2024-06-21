@@ -1,15 +1,14 @@
 import getIsLittleEndian from '~/endian/get-is-little-endian'
-import type { AnyStruct, StructValue } from '~/struct/types'
-import { STRUCT_TYPES } from '../constants'
+import type { Struct, StructValue } from '~/struct/types'
 
 /**
  * Sets the values of a given struct in a DataView at the specified offset.
  *
- * @template A - The type of the DataView.
- * @template B - The type of the struct.
- * @template C - The type of the offset.
- * @template D - The type of the struct value.
- * @template E - The type of the isLittleEndian flag.
+ * @typeParam A - The type of the DataView.
+ * @typeParam B - The type of the struct.
+ * @typeParam C - The type of the offset.
+ * @typeParam D - The type of the struct value.
+ * @typeParam E - The type of the isLittleEndian flag.
  * @param {A} view - The DataView to set the values in.
  * @param {B} struct - The struct whose values need to be set.
  * @param {C} offset - The offset at which to set the values.
@@ -19,7 +18,7 @@ import { STRUCT_TYPES } from '../constants'
  */
 const viewSet = <
   A extends DataView,
-  B extends AnyStruct,
+  B extends Struct,
   C extends number,
   D extends StructValue<B>,
   E extends boolean = boolean,
@@ -42,26 +41,25 @@ const viewSet = <
 
   let localOffset = 0
 
-  const traverseStruct = <F extends AnyStruct, G extends StructValue<F>>(
+  const traverseStruct = <F extends Struct, G extends StructValue<F>>(
     currentStruct: F,
     currentvalue: G,
   ) => {
-    if (currentStruct.type === STRUCT_TYPES.Data) {
-      const { byteLength, dataType } = currentStruct
-      const methodName = `set${dataType}` as const
-      const viewMethod = methodName
+    if (currentStruct.type === 'Tuple') {
+      for (let i = 0; i < currentStruct.items.length; i++) {
+        traverseStruct(currentStruct.items[i], (currentvalue as any[])[i])
+      }
+    } else {
+      const { byteLength, type } = currentStruct
+      const methodName = `set${type}` as const
 
       // FIXME hackish
-      ;(view[viewMethod] as any)(
+      ;(view[methodName] as any)(
         offset + localOffset,
         currentvalue,
         isLittleEndian,
       )
       localOffset += byteLength
-    } else {
-      for (let i = 0; i < currentStruct.items.length; i++) {
-        traverseStruct(currentStruct.items[i], (currentvalue as any[])[i])
-      }
     }
   }
 

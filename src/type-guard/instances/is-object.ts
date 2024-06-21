@@ -1,4 +1,4 @@
-import type { AnyObject } from '@recon-struct/utility-types'
+import type { AnyObject } from '@recon-struct/utility-types/dist/any/any-object'
 import { isNull } from '../primitives'
 import createTypeofTypeGuard from '../utils/create-typeof-type-guard'
 

@@ -1,4 +1,4 @@
-import type { AnyStruct } from '~/struct/types'
+import type { Struct } from '~/struct/types'
 
 /**
  * Extends the given buffer by the length of the data.
@@ -6,7 +6,7 @@ import type { AnyStruct } from '~/struct/types'
  * @param buffer - The buffer to extend.
  * @param struct - The data to append to the buffer.
  */
-const bufferExtend = (buffer: ArrayBuffer, struct: AnyStruct) => {
+const bufferExtend = (buffer: ArrayBuffer, struct: Struct) => {
   buffer.resize(buffer.byteLength + struct.byteLength)
 }
 

@@ -1,6 +1,5 @@
 import getIsLittleEndian from '~/endian/get-is-little-endian'
-import { STRUCT_TYPES } from '../constants'
-import type { AnyStruct } from '../types'
+import type { Struct } from '~/struct/types'
 
 /**
  * Retrieves structured data from a DataView object based on a given struct definition.
@@ -14,7 +13,7 @@ import type { AnyStruct } from '../types'
  */
 const viewGet = (
   view: DataView,
-  struct: AnyStruct,
+  struct: Struct,
   offset: number,
   isLittleEndian = getIsLittleEndian(),
 ) => {
@@ -30,23 +29,24 @@ const viewGet = (
 
   let localOffset = 0
 
-  const traverseStruct = (currentStruct: AnyStruct): any => {
-    if (currentStruct.type === STRUCT_TYPES.Data) {
-      const { byteLength, dataType } = currentStruct
-      const methodName = `get${dataType}` as const
-      const viewMethod = methodName
+  const traverseStruct = (currentStruct: Struct): any => {
+    if (currentStruct.type === 'Tuple') {
+      const items = []
 
-      const result = view[viewMethod](offset + localOffset, isLittleEndian)
+      for (let i = 0; i < currentStruct.items.length; i++) {
+        items.push(traverseStruct(currentStruct.items[i]))
+      }
+
+      return items
+    } else {
+      const { byteLength, type } = currentStruct
+      const methodName = `get${type}` as const
+
+      const result = view[methodName](offset + localOffset, isLittleEndian)
 
       localOffset += byteLength
 
       return result
-    } else {
-      const items = []
-      for (let i = 0; i < currentStruct.items.length; i++) {
-        items.push(traverseStruct(currentStruct.items[i]))
-      }
-      return items
     }
   }
 

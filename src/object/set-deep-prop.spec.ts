@@ -1,4 +1,5 @@
-import { GetPaths, Join } from '@recon-struct/utility-types'
+import { GetPaths } from '@recon-struct/utility-types/dist/object/get-paths'
+import { Join } from '@recon-struct/utility-types/dist/tuple/join'
 import { describe, expect, it } from 'bun:test'
 import setDeepProp from './set-deep-prop'
 

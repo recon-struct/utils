@@ -1,4 +1,4 @@
-import type { Includes } from '@recon-struct/utility-types'
+import type { Includes } from '@recon-struct/utility-types/dist/string/antecedent/includes'
 
 /**
  * Checks if a string includes another string.

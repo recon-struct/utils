@@ -1,4 +1,4 @@
-import type { StartsWith } from '@recon-struct/utility-types'
+import type { StartsWith } from '@recon-struct/utility-types/dist/string/antecedent/starts-with'
 
 /**
  * Checks if a string starts with a specified prefix.

@@ -1,4 +1,4 @@
-import type { AnyFunction } from '@recon-struct/utility-types'
+import type { AnyFunction } from '@recon-struct/utility-types/dist/any/any-function'
 
 /**
  * Creates a type guard function that checks if a value matches a specific type.

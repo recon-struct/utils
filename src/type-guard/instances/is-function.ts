@@ -1,4 +1,4 @@
-import type { AnyFunction } from '@recon-struct/utility-types'
+import type { AnyFunction } from '@recon-struct/utility-types/dist/any/any-function'
 import createTypeofTypeGuard from '../utils/create-typeof-type-guard'
 
 /**

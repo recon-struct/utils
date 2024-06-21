@@ -1,4 +1,4 @@
-import type { Constructor } from '@recon-struct/utility-types'
+import type { Constructor } from '@recon-struct/utility-types/dist/function/constructor'
 import createTypeGuard from './create-type-guard'
 
 /**

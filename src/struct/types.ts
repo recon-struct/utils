@@ -1,59 +1,24 @@
-import type { Add } from '@recon-struct/utility-types'
-import type {
-  BIGINT_TYPES,
-  DATA_TYPES,
-  DATA_TYPE_BYTE_LENGTHS,
-  FLOAT_TYPES,
-  INT_TYPES,
-  STRUCT_TYPES,
-} from './constants'
+import type { Add } from '@recon-struct/utility-types/dist/math/add'
+import * as DataTypes from './data-types'
 
-export type BigintTypes = typeof BIGINT_TYPES
+export type BigIntTypes = 'BigInt64' | 'BigUint64'
 
-export type BigintTypeKeys = BigintTypes[keyof BigintTypes]
+export type StructData = (typeof DataTypes)[keyof typeof DataTypes]
 
-export type FloatTypes = typeof FLOAT_TYPES
-
-export type IntTypes = typeof INT_TYPES
-
-export type NumberTypeKeys = (IntTypes | FloatTypes)[keyof (
-  | IntTypes
-  | FloatTypes
-)]
-
-export type DataTypes = typeof DATA_TYPES
-
-export type DataTypeKeys = DataTypes[keyof DataTypes]
-
-export type MethodName<A extends DataTypeKeys = DataTypeKeys> =
-  `${'get' | 'set'}${A}`
-
-export type DataTypeByteLengths = typeof DATA_TYPE_BYTE_LENGTHS
-
-export interface DataBase<A extends number> {
-  byteLength: A
-}
-
-export interface StructData<A extends DataTypeKeys = DataTypeKeys>
-  extends DataBase<DataTypeByteLengths[A]> {
-  type: typeof STRUCT_TYPES.Data
-  dataType: A
-}
-
-export interface StructTuple<A extends AnyStruct[] = AnyStruct[]>
-  extends DataBase<TupleByteLength<A>> {
-  type: typeof STRUCT_TYPES.Tuple
+export interface StructTuple<A extends Struct[] = Struct[]> {
+  type: 'Tuple'
   items: A
+  byteLength: TupleByteLength<A>
 }
 
-export type AnyStruct = StructData | StructTuple
+export type Struct = StructData | StructTuple
 
 export type TupleByteLength<
-  A extends AnyStruct[],
+  A extends Struct[],
   B extends number | bigint = 0,
 > = A extends []
   ? B
-  : A extends [infer C extends AnyStruct, ...infer E extends AnyStruct[]]
+  : A extends [infer C extends Struct, ...infer E extends Struct[]]
     ? TupleByteLength<E, Add<C['byteLength'], B>>
     : B
 
@@ -61,20 +26,20 @@ export type Scalar = number | bigint
 
 export type ScalarArray = (Scalar | ScalarArray)[]
 
-export type StructItemValue<A extends StructData> =
-  A['dataType'] extends BigintTypeKeys ? bigint : number
+export type StructDataValue<A extends StructData> =
+  A['type'] extends BigIntTypes ? bigint : number
 
-export type StructItemsValue<
-  A extends AnyStruct[],
+export type StructTupleValues<
+  A extends Struct[],
   B extends ScalarArray = [],
 > = A extends []
   ? B
-  : A extends [infer C extends AnyStruct, ...infer E extends AnyStruct[]]
-    ? StructItemsValue<E, [...B, StructValue<C>]>
+  : A extends [infer C extends Struct, ...infer D extends Struct[]]
+    ? StructTupleValues<D, [...B, StructValue<C>]>
     : B
 
-export type StructValue<A extends AnyStruct> = A extends StructData
-  ? StructItemValue<A>
-  : A extends StructTuple
-    ? StructItemsValue<A['items']>
-    : Scalar
+export type StructValue<A extends Struct> = A extends StructData
+  ? StructDataValue<A>
+  : A extends StructTuple<infer B>
+    ? StructTupleValues<B>
+    : never

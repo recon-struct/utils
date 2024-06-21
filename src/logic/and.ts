@@ -1,4 +1,4 @@
-import type { And } from '@recon-struct/utility-types'
+import type { And } from '@recon-struct/utility-types/dist/logic/antecedent/and'
 
 /**
  * Performs a logical AND operation on two boolean values.

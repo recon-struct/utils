@@ -125,7 +125,7 @@
     "description": "Import named",
   },
   "Create a snippet": {
-    "scope": "jsonc",
+    "scope": "snippets",
     "body": [
       "\"${1:Snippet Name}\": {",
       "\t\"scope\": \"${2:typescript}\",",
@@ -148,6 +148,17 @@
     ],
     "prefix": "int",
     "description": "Create an interface",
+  },
+  "Unit Test": {
+    "scope": "typescript",
+    "prefix": "test",
+    "body": [
+      "import { describe, expect, it } from 'bun:test'",
+      "import ${1:${TM_FILENAME_BASE/(-([a-zA-Z]))|(\\.[^$]+$)/${2:/upcase}/g}} from './${TM_FILENAME_BASE/(\\.[^$]+$)//g}'",
+      "",
+      "describe('${1:${TM_FILENAME_BASE/(-([a-zA-Z]))|(\\.[^$]+$)/${2:/upcase}/g}}', () => {",
+    ],
+    "description": "Unit Test",
   },
   "Describe unit test": {
     "scope": "typescript",

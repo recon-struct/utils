@@ -1,9 +1,7 @@
-import type {
-  GetPathValue,
-  GetPaths,
-  Join,
-  Split,
-} from '@recon-struct/utility-types'
+import type { GetPathValue } from '@recon-struct/utility-types/dist/object/get-path-value'
+import type { GetPaths } from '@recon-struct/utility-types/dist/object/get-paths'
+import type { Split } from '@recon-struct/utility-types/dist/string/split'
+import type { Join } from '@recon-struct/utility-types/dist/tuple/join'
 import isNullish from '~/type-guard/is-nullish'
 
 const setDeepProp = <

@@ -1,5 +1,5 @@
 export * from './buffer'
-export { default as structData } from './struct-data'
-export { default as structTuple } from './struct-tuple'
+export * from './create-struct'
+export * from './data-types'
 export * from './types'
 export * from './view'

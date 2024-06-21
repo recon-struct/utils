@@ -1,4 +1,4 @@
-import type { EndsWith } from '@recon-struct/utility-types'
+import type { EndsWith } from '@recon-struct/utility-types/dist/string/antecedent/ends-with'
 
 /**
  * Checks if a string ends with a specified suffix.

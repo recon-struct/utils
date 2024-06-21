@@ -1,4 +1,4 @@
-import type { AnyArray } from '@recon-struct/utility-types'
+import type { AnyArray } from '@recon-struct/utility-types/dist/any/any-array'
 import { createTypeGuard } from '../utils'
 
 /**
