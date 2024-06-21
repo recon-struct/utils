@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'bun:test'
-import createSymbolGenerator from './create-symbol-generator'
+import createSymbolGen from './create-symbol-gen'
 
-describe('createSymbolGenerator', () => {
+describe('createSymbolGen', () => {
   it('should generate unique symbols', () => {
-    const symbolGenerator = createSymbolGenerator()
+    const symbolGenerator = createSymbolGen()
 
     const symbol1 = symbolGenerator.next().value
     const symbol2 = symbolGenerator.next().value

@@ -2,9 +2,9 @@
  * Generates unique symbols using a generator function.
  * @yields {symbol} The next unique symbol.
  * @returns The final generated symbol.
- * @category Generators
+ * @category Gen
  */
-function* createSymbolGenerator() {
+function* createSymbolGen() {
   let sym = Symbol()
 
   while (true === true) {
@@ -13,4 +13,4 @@ function* createSymbolGenerator() {
   }
 }
 
-export default createSymbolGenerator
+export default createSymbolGen

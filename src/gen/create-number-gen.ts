@@ -2,9 +2,9 @@
  * Generates an infinite sequence of numbers starting from 0.
  * @yields {number} The next number in the sequence.
  * @returns The final value of the generator.
- * @category Generators
+ * @category Gen
  */
-function* createNumberGenerator() {
+function* createNumberGen() {
   let value = 0
 
   while (true === true) {
@@ -13,4 +13,4 @@ function* createNumberGenerator() {
   }
 }
 
-export default createNumberGenerator
+export default createNumberGen

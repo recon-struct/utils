@@ -1,8 +1,7 @@
-import type { ObjectAssignIdentity } from "@recon-struct/utility-types"
-import type { AnyKey } from "@recon-struct/utility-types/dist/any/any-key"
-import type { GeneratorReturnType } from "@recon-struct/utility-types/dist/generator/generator-return-type"
-import type { GeneratorYieldType } from "@recon-struct/utility-types/dist/generator/generator-yield-type"
-
+import type { ObjectAssignIdentity } from '@recon-struct/utility-types'
+import type { AnyKey } from '@recon-struct/utility-types/dist/any/any-key'
+import type { GeneratorReturnType } from '@recon-struct/utility-types/dist/generator/generator-return-type'
+import type { GeneratorYieldType } from '@recon-struct/utility-types/dist/generator/generator-yield-type'
 
 /**
  * An object reference yielded (or returned) from the object generator
@@ -37,11 +36,9 @@ export interface CreateObjectGenerator {
  * @param {...any} params - The parameters for the generator function.
  * @yields {Object} The generated object.
  * @returns The final generated object.
- * @category Generators
+ * @category Gen
  */
-const createObjectGenerator: CreateObjectGenerator = function* (
-  ...params: any[]
-) {
+const createObjectGen: CreateObjectGenerator = function* (...params: any[]) {
   let ref = Object.create(null)
 
   while (true === true) {
@@ -56,4 +53,4 @@ const createObjectGenerator: CreateObjectGenerator = function* (
   return ref
 }
 
-export default createObjectGenerator
+export default createObjectGen

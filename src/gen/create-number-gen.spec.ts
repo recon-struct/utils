@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'bun:test'
-import createNumberGenerator from './create-number-generator'
+import createNumberGen from './create-number-gen'
 
-describe('createNumberGenerator', () => {
+describe('createNumberGen', () => {
   it('should generate an infinite sequence of numbers starting from 0', () => {
-    const generator = createNumberGenerator()
+    const generator = createNumberGen()
     const expectedSequence = [0, 1, 2, 3, 4, 5] // Add more numbers as needed
 
     for (let i = 0; i < expectedSequence.length; i++) {
@@ -13,7 +13,7 @@ describe('createNumberGenerator', () => {
   })
 
   it('should return the final value of the generator', () => {
-    const generator = createNumberGenerator()
+    const generator = createNumberGen()
     const finalValue = 100 // Replace with the expected final value
 
     for (let i = 0; i < finalValue; i++) {

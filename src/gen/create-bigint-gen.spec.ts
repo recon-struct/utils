@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'bun:test'
-import createBigintGenerator from './create-bigint-generator'
+import createBigintGen from './create-bigint-gen'
 
-describe('createBigintGenerator', () => {
+describe('createBigintGen', () => {
   it('should generate incrementing bigint values', () => {
-    const generator = createBigintGenerator()
+    const generator = createBigintGen()
     let currentValue = BigInt(0)
 
     for (let i = 0; i < 10; i++) {
-      const nextValue = generator.next().value
+      const nextValue = generator.next().value!
       expect(nextValue.toString()).toBe(currentValue.toString())
       currentValue = nextValue + BigInt(1)
     }

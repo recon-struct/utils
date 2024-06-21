@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'bun:test'
-import createObjectGenerator from './create-object-generator'
+import createObjectGen from './create-object-gen'
 
-describe('createObjectGenerator', () => {
+describe('createObjectGen', () => {
   it('should not yield the same object in consecutive calls', () => {
-    const generator = createObjectGenerator('type', 'person')
+    const generator = createObjectGen('type', 'person')
 
     const result = generator.next()
 

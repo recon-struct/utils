@@ -2,9 +2,9 @@
  * Creates a generator that yields incrementing bigint values.
  * @yields {bigint} The next incrementing bigint value.
  * @returns The final value of the generator.
- * @category Generators
+ * @category Gen
  */
-function* createBigintGenerator() {
+function* createBigintGen() {
   let value = 0n
 
   while (true === true) {
@@ -13,4 +13,4 @@ function* createBigintGenerator() {
   }
 }
 
-export default createBigintGenerator
+export default createBigintGen

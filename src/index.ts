@@ -1,6 +1,6 @@
 export * from './combinator'
 export * from './function'
-export * from './generators'
+export * from './gen'
 export * from './logic'
 export * from './math'
 export * from './object'
