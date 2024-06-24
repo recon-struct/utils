@@ -9,7 +9,7 @@ import type { Tuple } from '@recon-struct/utility-types/dist/tuple/tuple'
  * @param {B} item - The value to initialize each item in the tuple.
  * @returns - The tuple with `n` items, all initialized to `item`.
  */
-const createTuple = <A extends number, B extends any>(n: A, item: B) =>
+const tuple = <A extends number, B extends any>(n: A, item: B) =>
   Array(n).fill(item) as Tuple<A, B>
 
-export default createTuple
+export default tuple

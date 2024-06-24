@@ -1,4 +1,6 @@
 export * from './head'
 export { default as head } from './head'
 export { default as last } from './last'
+export { default as swap } from './swap'
+export { default as tuple } from './tuple'
 export { default as uniq } from './uniq'
