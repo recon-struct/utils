@@ -176,3 +176,5 @@ dist
 
 # We do not use pnpm anymore
 pnpm-lock.yaml
+
+docs/
