@@ -1,3 +1,4 @@
+import type { Point } from '@recon-struct/utility-types/dist/geometry/point'
 import getSlope from './get-slope'
 import getYIntercept from './get-y-intercept'
 
@@ -24,7 +25,7 @@ const getIntersection = (
   y3: number,
   x4: number,
   y4: number,
-) => {
+): Point | null => {
   const slope1 = getSlope(x1, y1, x2, y2)
   const slope2 = getSlope(x3, y3, x4, y4)
 

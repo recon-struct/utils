@@ -11,7 +11,7 @@
     "typedoc": "^0.25.13"
   },
   "dependencies": {
-    "@recon-struct/utility-types": "^1.5.6"
+    "@recon-struct/utility-types": "^1.6.1"
   },
   "license": "MIT",
   "peerDependencies": {

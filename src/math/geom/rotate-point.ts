@@ -1,3 +1,5 @@
+import type { Point } from '@recon-struct/utility-types/dist/geometry/point'
+
 interface RotatePoint {
   (
     px: number,
@@ -20,7 +22,7 @@ interface RotatePoint {
  * @returns An array containing the new x and y coordinates of the rotated point.
  * @category Math
  */
-const rotatePoint: RotatePoint = (...params: any) => {
+const rotatePoint: RotatePoint = (...params: any): Point => {
   let px: number
   let py: number
   let cx: number

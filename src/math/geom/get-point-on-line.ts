@@ -1,3 +1,4 @@
+import type { Point } from '@recon-struct/utility-types'
 import getLerp from '../get-lerp'
 
 /**
@@ -17,6 +18,6 @@ const getPointOnLine = (
   x2: number,
   y2: number,
   norm: number,
-) => [getLerp(x1, x2, norm), getLerp(y1, y2, norm)]
+): Point => [getLerp(x1, x2, norm), getLerp(y1, y2, norm)]
 
 export default getPointOnLine
