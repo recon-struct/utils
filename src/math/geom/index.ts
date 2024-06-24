@@ -1,5 +1,5 @@
 export { default as getBoundingBox } from './get-bounding-box'
-export { default as getDistance, default as getHypot } from './get-hypot'
+export { default as getHypot } from './get-hypot'
 export { default as getIntersection } from './get-intersection'
 export { default as getMidPoint } from './get-mid-point'
 export { default as getPointOnLine } from './get-point-on-line'
