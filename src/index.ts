@@ -1,4 +1,5 @@
 export * from './combinator'
+export * from './endian'
 export * from './function'
 export * from './gen'
 export * from './logic'
